@@ -1,0 +1,39 @@
+<br>
+<br>
+<div>
+    <h1 class="text-center display-6 bg-light text-dark p-3 mb-2">Employee List</h1>
+</div>
+<br>
+<div class="container-sm">
+    <div class="text-center">
+        <table class="table table-light table-hover">
+            <thead>
+                <tr>
+                    <th>Employee ID</th>
+                    <th>Full Name</th>
+                    <th>Actions</th>
+                    <!-- <th>Update</th>
+                    <th>View</th> -->
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let employee of employees">
+                    <td>{{employee.id}}</td>
+                    <td>{{employee.name}}</td>
+                    <td>
+                        <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+                            <button type="button" class="btn btn-secondary"
+                                (click)="getEmployee(employee.id)">View</button>
+                            <button type="button" class="btn btn-danger"
+                                (click)="deleteEmployee(employee.id)">Delete</button>
+                            <button type="button" class="btn btn-secondary"
+                                (click)="updateEmployee(employee.id)">Update</button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+
+        </table>
+
+    </div>
+</div>
